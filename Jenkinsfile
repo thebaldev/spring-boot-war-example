@@ -7,8 +7,8 @@ pipeline {
         stage("Test"){
             steps{
                 // Maven test
-                sh 'Maven --version
-                sh "Maven test"
+               
+                sh "mvn test"
                 slackSend channel: 'youtubejenkins', message: 'Job Started'
                 
             }
