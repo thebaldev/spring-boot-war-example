@@ -26,7 +26,7 @@ pipeline {
             steps{
                 // deploy on container -> plugin
                 slackSend channel: 'test', message: 'Job deploy on container'
-                deploy adapters: [tomcat9(credentialsId: 'tomcatserverdetails1', path: '', url: 'http://20.121.64.144:8080')], contextPath: '/app', war: '**/*.war'                                                     
+                deploy adapters: [tomcat9(credentialsId: 'tomcatserverdetails112233', path: '', url: 'http://20.121.64.144:8080')], contextPath: '/app', war: '**/*.war'                                                     
                 echo "========pipeline executed successfully ========"
             }
             
@@ -41,7 +41,7 @@ pipeline {
             steps{
                 // deploy on container -> plugin
                 slackSend channel: 'test', message: 'Job prod'
-                deploy adapters: [tomcat9(credentialsId: 'tomcatserverdetails1', path: '', url: 'http://20.121.65.139:8080')], contextPath: '/app', war: '**/*.war'                                                     
+                deploy adapters: [tomcat9(credentialsId: 'tomcatserverdetails112233', path: '', url: 'http://20.121.65.139:8080')], contextPath: '/app', war: '**/*.war'                                                     
                 echo "========pipeline executed successfully ========"
 
             }
