@@ -2,7 +2,6 @@ pipeline {
     agent any
      tools {
         maven 'Maven' 
-        slackSend channel: 'test', message: 'Job Started'
         }
     stages {
         stage("Test"){
