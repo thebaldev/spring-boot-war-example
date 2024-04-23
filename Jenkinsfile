@@ -34,7 +34,6 @@ pipeline {
 
             
          stage("Deploy on Prod"){
-
              steps{
                 // deploy on container -> plugin
                 slackSend channel: 'test', message: 'Job prod'
