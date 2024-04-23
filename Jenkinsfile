@@ -31,14 +31,11 @@ pipeline {
             }
             
         }
-        stage("Deploy on Prod"){
-             input {
-                message "Should we continue?"
-                ok "Yes we Should"
 
-            }
-        
-            steps{
+            
+         stage("Deploy on Prod"){
+
+             steps{
                 // deploy on container -> plugin
                 slackSend channel: 'test', message: 'Job prod'
                 deploy adapters: [tomcat9(credentialsId: 'tomcatserverdetails112233', path: '', url: 'http://20.121.65.139:8080')], contextPath: '/app', war: '**/*.war'                                                     
