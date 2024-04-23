@@ -31,13 +31,14 @@ pipeline {
             }
             
         }
-        stage("Deploy on Prod"){
-             input {
-                message "Should we continue?"
-                ok "Yes we Should"
+        // stage("Deploy on Prod"){
+        //      input {
+        //         message "Should we continue?"
+        //         ok "Yes we Should"
 
-            }
-            
+        //     }
+        // }
+        stage("Deploy on Prod"){
             steps{
                 // deploy on container -> plugin
                 slackSend channel: 'test', message: 'Job prod'
@@ -45,7 +46,7 @@ pipeline {
                 echo "========pipeline executed successfully ========"
 
             }
-        }
+        
     }
     post{
         always{
