@@ -41,7 +41,6 @@ pipeline {
             steps{
                 // deploy on container -> plugin
                 slackSend channel: 'test', message: 'Job prod'
-                deploy adapters: [tomcat9(credentialsId: 'tomcatserverdetails1', path: '', url: 'http://20.121.65.139:8080')], contextPath: '/app', war: '**/*.war'
 
             }
         }
